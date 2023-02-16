@@ -1,3 +1,4 @@
+import userlist from "./../json/userlist.json";
 const userSVC = "http://www.mocky.io/v2/5ba8efb23100007200c2750c";
 
 /**
@@ -7,4 +8,5 @@ const userSVC = "http://www.mocky.io/v2/5ba8efb23100007200c2750c";
 export const fetchUsers = async () =>
   await fetch(userSVC)
     .then((res) => res.json())
-    .then((data) => data);
+    .then((data) => data)
+    .catch(err=>userlist);
